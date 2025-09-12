@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ilg5bw48ue1e"]
+
+[ext_resource type="Script" uid="uid://ba6aqfcj7al2t" path="res://node_2d.gd" id="1_0e48y"]
+[ext_resource type="Texture2D" uid="uid://dn67p1rfh4tf3" path="res://mix-color-background-r4e9huzf751xgw78.jpg" id="2_0hol4"]
+[ext_resource type="AudioStream" uid="uid://55gjx8nm2cmr" path="res://new-notification-08-352461.mp3" id="3_q6r6c"]
+[ext_resource type="AudioStream" uid="uid://dmhejlhwg5yol" path="res://notification-bell-sound-1-376885.mp3" id="4_kdubu"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0e48y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1149.0
+offset_bottom = 650.0
+
+[node name="Mix-color-background-r4e9Huzf751Xgw78" type="Sprite2D" parent="ColorRect"]
+position = Vector2(575.25, 324)
+scale = Vector2(0.598698, 0.546667)
+texture = ExtResource("2_0hol4")
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 497.0
+offset_top = 57.0
+offset_right = 663.0
+offset_bottom = 177.0
+
+[node name="sound1" type="AudioStreamPlayer" parent="Button1"]
+stream = ExtResource("3_q6r6c")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 498.0
+offset_top = 461.0
+offset_right = 667.0
+offset_bottom = 581.0
+
+[node name="sound2" type="AudioStreamPlayer" parent="Button2"]
+stream = ExtResource("4_kdubu")
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
